@@ -1,4 +1,4 @@
-/* OffGridWealth concept film — a 40-second story told in SVG.
+/* ZovaWealth concept film — a 40-second story told in SVG.
    Mount: <div class="film" data-film></div>.  ?rec in the URL plays once, full size, for recording.
    Motion is transform/opacity/stroke only. With reduced motion the film does not autoplay;
    the step buttons still move through it. */
@@ -30,7 +30,7 @@
   var SCENES = [
     { d: 6500, cap: 'Your money lives in ten different places — and not one of them shows you the whole picture.' },
     { d: 7500, cap: 'Most money apps fix that by asking for your <b>PAN, OTP and email access</b> — then keep your financial life on their server.' },
-    { d: 5500, cap: '<b>OffGridWealth</b> cuts the cord. It reads your statements on your own phone or PC. Nothing is uploaded.' },
+    { d: 5500, cap: '<b>ZovaWealth</b> cuts the cord. It reads your statements on your own phone or PC. Nothing is uploaded.' },
     { d: 8000, cap: 'In seconds, one honest picture: every fund, deposit, policy and loan — for the whole family.' },
     { d: 8000, cap: 'Then it works like a planner: goals, retirement, tax-season reports and a straight answer on that policy.' },
     { d: 6500, cap: 'Download it free. <b>Every feature is unlocked for 14 days.</b>' }
@@ -82,7 +82,7 @@
     }).join('');
 
     return '' +
-      '<svg class="f" viewBox="0 0 800 520" role="img" aria-label="Animated story: scattered statements, apps that upload your data, and OffGridWealth keeping everything on your own device">' +
+      '<svg class="f" viewBox="0 0 800 520" role="img" aria-label="Animated story: scattered statements, apps that upload your data, and ZovaWealth keeping everything on your own device">' +
       '<defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#7FA6CF" stroke-opacity=".07"/></pattern>' +
       '<radialGradient id="glow" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#F3C969" stop-opacity=".18"/><stop offset="1" stop-color="#F3C969" stop-opacity="0"/></radialGradient></defs>' +
       '<rect width="800" height="520" fill="#0B1E33"/><rect width="800" height="520" fill="url(#g)"/>' +
@@ -103,7 +103,7 @@
         '<rect x="316" y="32" width="168" height="388" rx="21" fill="#F4F7FB"/>' +
         '<path d="M316 53 a21 21 0 0 1 21 -21 h126 a21 21 0 0 1 21 21 v13 h-168z" fill="#0F2238"/>' +
         '<image href="' + ICON + '" x="326" y="40" width="18" height="18"/>' +
-        '<text x="349" y="54" font-size="11" font-weight="800" fill="#fff">OffGrid<tspan fill="#F3C969">Wealth</tspan></text>' +
+        '<text x="349" y="54" font-size="11" font-weight="800" fill="#fff">Zova<tspan fill="#F3C969">Wealth</tspan></text>' +
         '<g class="sc" data-s="2" id="lock"><rect x="380" y="180" width="40" height="34" rx="7" fill="#0F2238"/><path d="M388 180 v-9 a12 12 0 0 1 24 0 v9" fill="none" stroke="#0F2238" stroke-width="5"/><circle cx="400" cy="195" r="4" fill="#F3C969"/><rect x="398.5" y="196" width="3" height="9" rx="1.5" fill="#F3C969"/>' +
           '<text x="400" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="#15263C">Stays on this device</text></g>' +
         '<g class="sc" data-s="3 4" id="dash">' +
@@ -137,7 +137,7 @@
       '<g class="sc" data-s="5" id="end">' +
         '<circle cx="400" cy="200" r="260" fill="url(#glow)"/>' +
         '<image class="pop" href="' + ICON + '" x="345" y="56" width="110" height="110"/>' +
-        '<text x="400" y="222" text-anchor="middle" font-size="44" font-weight="800" fill="#fff" style="font-variation-settings:\'wdth\' 116">OffGrid<tspan fill="#F3C969">Wealth</tspan></text>' +
+        '<text x="400" y="222" text-anchor="middle" font-size="44" font-weight="800" fill="#fff" style="font-variation-settings:\'wdth\' 116">Zova<tspan fill="#F3C969">Wealth</tspan></text>' +
         '<text x="400" y="258" text-anchor="middle" font-size="18" fill="#A9BBD1">Your Wealth. Your Data. Your Privacy.</text>' +
         '<rect x="232" y="290" width="336" height="44" rx="22" fill="#D9A441"/><text x="400" y="318" text-anchor="middle" font-size="16" font-weight="800" fill="#1B1206">Free download — 14 days, all features</text>' +
         '<text x="400" y="368" text-anchor="middle" font-size="14" fill="#A9BBD1">Android phones and Windows PCs • offgridwealth.in</text>' +

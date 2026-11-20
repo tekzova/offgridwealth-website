@@ -2,9 +2,9 @@
 
 /* ===== Download links: change them here, and every button on every page follows. ===== */
 var OGW_DOWNLOADS = {
-  windows: 'downloads/OffGridWealth_3.0.0_x64-setup.exe',   // put the installer in /downloads on the server
-  android: 'https://play.google.com/store/apps/details?id=com.tekzova.offgridwealth',
-  msstore: 'https://apps.microsoft.com/search?query=OffGridWealth'   // replace with the Store listing URL (apps.microsoft.com/detail/...) once published
+  windows: 'downloads/ZovaWealth_3.0.0_x64-setup.exe',   // put the installer in /downloads on the server
+  android: 'https://play.google.com/store/apps/details?id=com.tekzova.zovawealth',
+  msstore: 'https://apps.microsoft.com/search?query=ZovaWealth'   // replace with the Store listing URL (apps.microsoft.com/detail/...) once published
 };
 
 (function () {

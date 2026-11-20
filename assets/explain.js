@@ -106,9 +106,9 @@
     return wrap(id, inner, 'Your fund drawn against the same money put into its index, plus six money-health checks');
   };
 
-  /* 4 TAX — sales split into lots, short and long term, into the ITR columns */
+  /* 4 GAINS — open lots at today's prices, short and long term, with the tax-year countdown */
   X.tax = function (id) {
-    var rows = [['10/06/2025', '10/06/2024', '1,81,715', '2,19,160', 'LT'], ['11/06/2025', '12/09/2024', '94,180', '1,07,440', 'ST'], ['11/06/2025', '12/11/2024', '1,05,660', '1,19,320', 'ST'], ['15/02/2026', '20/01/2025', '2,16,010', '2,52,270', 'LT']];
+    var rows = [['Flexi cap', '10/06/2024', '1,81,715', '2,19,160', 'LT'], ['Flexi cap', '12/09/2026', '94,180', '1,07,440', 'ST'], ['Index fund', '12/11/2026', '1,05,660', '1,19,320', 'ST'], ['Index fund', '20/01/2025', '2,16,010', '2,52,270', 'LT']];
     var css = base + rows.map(function (r, i) { var t = 10 + i * 9; return kf(id + 'r' + i, '0%,' + t + '%{transform:translate(-24px,0);opacity:0}' + (t + 6) + '%,100%{transform:translate(0,0);opacity:1}'); }).join('') +
       kf(id + 'tot', '0%,50%{opacity:0}58%,100%{opacity:1}') + kf(id + 'bar', '0%,60%{transform:scaleX(0)}80%,100%{transform:scaleX(1)}') + kf(id + 'days', '0%,2%{opacity:0}8%,100%{opacity:1}');
     var tr = rows.map(function (r, i) {
@@ -116,17 +116,17 @@
       return '<g class="k" style="animation-name:' + id + 'r' + i + '"><text x="40" y="' + y + '" font-size="12" fill="' + W + '">' + r[0] + '</text><text x="138" y="' + y + '" font-size="12" fill="' + M + '">' + r[1] + '</text><text x="262" y="' + y + '" font-size="12" fill="' + M + '" text-anchor="end">' + r[2] + '</text><text x="352" y="' + y + '" font-size="12" fill="' + W + '" text-anchor="end">' + r[3] + '</text><rect x="366" y="' + (y - 12) + '" width="26" height="16" rx="4" fill="' + c + '"/><text x="379" y="' + y + '" font-size="10" font-weight="800" fill="' + N + '" text-anchor="middle">' + r[4] + '</text></g>';
     }).join('');
     var inner = st(id, css) +
-      '<text x="30" y="40" font-size="13" fill="' + M + '" font-weight="700">CAPITAL GAINS · ITR FORMAT · FY 2025–26</text>' +
+      '<text x="30" y="40" font-size="13" fill="' + M + '" font-weight="700">UNREALISED GAINS · AT TODAY’S PRICES</text>' +
       '<rect x="30" y="56" width="380" height="300" rx="12" fill="' + N2 + '"/>' +
-      '<g font-size="10" fill="' + M + '" font-weight="700"><text x="40" y="84">SALE DATE</text><text x="138" y="84">BOUGHT</text><text x="262" y="84" text-anchor="end">COST</text><text x="352" y="84" text-anchor="end">SALE</text><text x="366" y="84">TERM</text></g><path d="M40 92 H400" stroke="' + N3 + '"/>' + tr +
-      '<g class="k" style="animation-name:' + id + 'tot"><path d="M40 246 H400" stroke="' + N3 + '"/><text x="40" y="272" font-size="12" fill="' + G2 + '" font-weight="700">Short-term gain</text><text x="352" y="272" font-size="13" fill="' + W + '" font-weight="800" text-anchor="end">₹26,920</text><text x="40" y="296" font-size="12" fill="' + B + '" font-weight="700">Long-term gain</text><text x="352" y="296" font-size="13" fill="' + W + '" font-weight="800" text-anchor="end">₹73,705</text><text x="40" y="332" font-size="11" fill="' + M + '">First-in first-out, from your own transactions. Every lot, every date.</text></g>' +
+      '<g font-size="10" fill="' + M + '" font-weight="700"><text x="40" y="84">FUND</text><text x="138" y="84">BOUGHT</text><text x="262" y="84" text-anchor="end">COST</text><text x="352" y="84" text-anchor="end">VALUE NOW</text><text x="366" y="84">TERM</text></g><path d="M40 92 H400" stroke="' + N3 + '"/>' + tr +
+      '<g class="k" style="animation-name:' + id + 'tot"><path d="M40 246 H400" stroke="' + N3 + '"/><text x="40" y="272" font-size="12" fill="' + G2 + '" font-weight="700">Short-term gain</text><text x="352" y="272" font-size="13" fill="' + W + '" font-weight="800" text-anchor="end">₹26,920</text><text x="40" y="296" font-size="12" fill="' + B + '" font-weight="700">Long-term gain</text><text x="352" y="296" font-size="13" fill="' + W + '" font-weight="800" text-anchor="end">₹73,705</text><text x="40" y="332" font-size="11" fill="' + M + '">Every open lot, from your own transactions. Know the gain before you sell.</text></g>' +
       '<rect x="430" y="56" width="180" height="140" rx="12" fill="' + N2 + '"/><text x="446" y="80" font-size="11" fill="' + M + '" font-weight="700">TAX YEAR ENDS 31 MARCH</text>' +
       '<text class="k" style="animation-name:' + id + 'days" x="446" y="130" font-size="44" font-weight="800" fill="' + W + '">174</text><text x="446" y="150" font-size="12" fill="' + M + '">days left</text>' +
       '<text x="446" y="178" font-size="11" fill="' + G + '" font-weight="700">₹1,25,000 tax-free left</text>' +
-      '<rect x="430" y="212" width="180" height="144" rx="12" fill="' + N2 + '"/><text x="446" y="236" font-size="11" fill="' + M + '" font-weight="700">80C USED THIS YEAR</text>' +
-      '<rect x="446" y="250" width="148" height="12" rx="6" fill="' + N3 + '"/><rect class="k" style="animation-name:' + id + 'bar;transform-origin:left" x="446" y="250" width="148" height="12" rx="6" fill="' + G + '"/><text x="446" y="282" font-size="13" fill="' + W + '" font-weight="800">₹1,50,000 of ₹1,50,000</text>' +
-      '<text x="446" y="310" font-size="11" fill="' + M + '" font-weight="700">80CCD(1B) · NPS</text><rect x="446" y="318" width="148" height="12" rx="6" fill="' + N3 + '"/><rect class="k" style="animation-name:' + id + 'bar;animation-delay:.3s;transform-origin:left" x="446" y="318" width="0" height="12" rx="6" fill="' + G2 + '"/><text x="446" y="346" font-size="12" fill="' + W + '">₹0 of ₹50,000 — room left</text>';
-    return wrap(id, inner, 'Sales split into lots with short- and long-term gains, a countdown to 31 March and the 80C limit used');
+      '<rect x="430" y="212" width="180" height="144" rx="12" fill="' + N2 + '"/><text x="446" y="236" font-size="11" fill="' + M + '" font-weight="700">LONG-TERM, READY TO BOOK</text>' +
+      '<text x="446" y="270" font-size="20" fill="' + W + '" font-weight="800">₹73,705</text><text x="446" y="290" font-size="11" fill="' + M + '">on units held over 12 months</text>' +
+      '<rect x="446" y="306" width="148" height="12" rx="6" fill="' + N3 + '"/><rect class="k" style="animation-name:' + id + 'bar;transform-origin:left" x="446" y="306" width="87" height="12" rx="6" fill="' + G + '"/><text x="446" y="340" font-size="11" fill="' + W + '">inside the ₹1,25,000 allowance</text>';
+    return wrap(id, inner, 'Open lots with short- and long-term gains at today’s prices, a countdown to 31 March and the gains ready to book');
   };
 
   /* 5 PROTECT — what the policy earns against the alternatives */
